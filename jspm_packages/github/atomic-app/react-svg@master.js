@@ -1,0 +1,1 @@
+module.exports = require("github:atomic-app/react-svg@master/index");

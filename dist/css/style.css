@@ -1,0 +1,96 @@
+body {
+  width: 100%;
+  height: 1200px; }
+
+.share-bubble__btn {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background-color: darkred;
+  border-radius: 40px;
+  border: none;
+  cursor: move;
+  outline: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+  .share-bubble__btn:hover, .share-bubble__btn:active {
+    background-color: #580000;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
+
+.i-share {
+  margin-left: -2px; }
+
+.react-draggable {
+  position: fixed;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+.share-bubble__services {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.share-bubble__services--above {
+  margin-top: -100px; }
+
+.service {
+  position: relative;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+  .share-bubble__services--above .service {
+    margin-bottom: -80px; }
+
+.service--twitter {
+  background-color: #59ADEC; }
+  .service--twitter:hover, .service--twitter:active {
+    background-color: #2b96e7;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
+
+.service--facebook {
+  background-color: #3A5795; }
+  .service--facebook:hover, .service--facebook:active {
+    background-color: #2c4270;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
+
+.service__label {
+  position: absolute;
+  top: 25%;
+  right: 35px;
+  color: white;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 4px 8px 2px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity .2s ease-in; }
+  .share-bubble__services--right .service__label {
+    right: auto;
+    left: 35px; }
+  .service:hover .service__label {
+    opacity: 1; }
+
+.share-bubble__services-enter {
+  opacity: 0.01;
+  transition: opacity .2s ease-in; }
+
+.share-bubble__services-enter.share-bubble__services-enter-active {
+  opacity: 1; }
+
+.share-bubble__services-leave {
+  opacity: 1;
+  transition: opacity .2s ease-in; }
+
+.share-bubble__services-leave.share-bubble__services-leave-active {
+  opacity: 0.01; }

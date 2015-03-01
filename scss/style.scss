@@ -1,0 +1,122 @@
+@mixin serviceHover($colour) {
+    &:hover,
+    &:active {
+        background-color: darken($colour, 10%);
+         box-shadow: 2px 2px 8px rgba(black, 0.8);
+    }
+}
+
+$c-twitter: #59ADEC;
+$c-facebook: #3A5795;
+
+body {
+    width: 100%;
+    height: 1200px;
+}
+
+.share-bubble__btn {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: darkred;
+    border-radius: 40px;
+    border: none;
+    cursor: move;
+    outline: none;
+    box-shadow: 2px 2px 4px rgba(black, 0.6);
+
+    @include serviceHover(darkred);
+}
+
+.i-share {
+    margin-left: -2px;
+}
+
+.react-draggable {
+    position: fixed;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.share-bubble__services {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.share-bubble__services--above {
+    margin-top: -100px;
+}
+
+.service {
+    position: relative;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(black, 0.6);
+
+    .share-bubble__services--above & {
+       margin-bottom: -80px;
+    }
+}
+
+.service--twitter {
+    background-color: #59ADEC;
+    @include serviceHover($c-twitter);
+}
+
+.service--facebook {
+    background-color: #3A5795;
+    @include serviceHover($c-facebook);
+}
+
+.service__label {
+    position: absolute;
+    top: 25%;
+    right: 35px;
+    color: white;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 4px 8px 2px;
+    border-radius: 4px;
+    background-color: rgba(black, 0.6);
+    opacity: 0;
+    transition: opacity .2s ease-in;
+
+    .share-bubble__services--right & {
+        right: auto;
+        left: 35px;
+    }
+
+    .service:hover & {
+        opacity: 1;
+    }
+}
+
+.share-bubble__services-enter {
+    opacity: 0.01;
+    transition: opacity .2s ease-in;
+}
+
+.share-bubble__services-enter.share-bubble__services-enter-active {
+    opacity: 1;
+}
+
+.share-bubble__services-leave {
+    opacity: 1;
+    transition: opacity .2s ease-in;
+}
+
+.share-bubble__services-leave.share-bubble__services-leave-active {
+    opacity: 0.01;
+}
