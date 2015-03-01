@@ -1,1 +1,0 @@
-module.exports = require("npm:react-draggable@0.4.0/index");
